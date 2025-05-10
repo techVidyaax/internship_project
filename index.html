@@ -139,8 +139,11 @@
             <div class="app-form-group message">
               <input class="app-form-control" placeholder="Your feedback">
             </div>
-            <div class="app-form-group buttons">
-              <button class="app-form-button">Submit</button>
+              <div class="app-form-group buttons">
+              <div id="successMsg" style="display: none; color: green; font-weight: bold; margin-bottom: 10px;">
+                Submitted successfully!
+              </div>
+              <button class="app-form-button" type="button" onclick="showSuccess()">Submit</button>
             </div>
           </div>
         </div>
@@ -152,4 +155,13 @@
     </div>
   </div>
 </div>
+<script>
+  function showSuccess() {
+    const msg = document.getElementById('successMsg');
+    msg.style.display = 'block';
+    setTimeout(() => {
+      msg.style.display = 'none';
+    }, 4000);
+  }
+</script>
 
